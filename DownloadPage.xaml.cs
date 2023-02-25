@@ -210,7 +210,7 @@ namespace Muhu_SL
             catch
             {
                 DownloadVersionIndex = -1;
-                DownloadClientIndex = -1;
+                DownloadClientIndex = -1;//a
             }
         }
 
