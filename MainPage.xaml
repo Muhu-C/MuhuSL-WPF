@@ -8,9 +8,6 @@
       Loaded="PageLoaded"
       d:DesignHeight="470" d:DesignWidth="750"
       Title="MainPage">
-    <Page.Resources>
-        <local:MainWindow x:Key="MainWindow"/>
-    </Page.Resources>
 
     <Grid Name="bcground" Background="{DynamicResource MainBackground}">
         <Label Foreground="{DynamicResource MainForeground}" Name="H1" Content="主页" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="0,25,0,0"/>

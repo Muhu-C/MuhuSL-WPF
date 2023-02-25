@@ -28,6 +28,7 @@ namespace Muhu_SL
         public static string[] mbgb = {"MB","MB"};//max.min]
         public static MainPage Page1 = new MainPage();
         public static ServerConsole Page2 = new ServerConsole();
+        public static DownloadPage Page4 = new DownloadPage();
         public static InfoPage Page5 = new InfoPage();
         private System.Windows.Forms.NotifyIcon _notifyIcon = null;
 
@@ -133,5 +134,6 @@ namespace Muhu_SL
         private void Bt1_Click(object sender, RoutedEventArgs e) { frame1.Content = Page1; }
         private void Bt2_Click(object sender, RoutedEventArgs e) { frame1.Content = Page2; }
         private void Bt5_Click(object sender, RoutedEventArgs e) { frame1.Content = Page5; }
+        private void Bt4_Click(object sender, RoutedEventArgs e) { frame1.Content = Page4; }
     }
 }
