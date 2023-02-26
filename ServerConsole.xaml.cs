@@ -38,7 +38,7 @@ namespace Muhu_SL
         }
         private void ServerConsole_Load(object sender, EventArgs e)
         {
-            
+            //nnn
         }
         private void TbInput_TextChanged(object sender, TextChangedEventArgs e)
         {
