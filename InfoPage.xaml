@@ -12,15 +12,15 @@
         <DockPanel Width="750" Height="200" >
             <StackPanel Width="367" Height="116" Margin="10" VerticalAlignment="Top">
                 <TextBlock FontSize="20" Margin="5" Foreground="{DynamicResource MainForeground}">程序主题</TextBlock>
-                <RadioButton Name="WhiteButton" GroupName="ColorRadioButtons" Margin="15,5,0,0" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="15" Checked="WhiteButton_Checked" Foreground="{DynamicResource MainForeground}">白</RadioButton>
-                <RadioButton Name="BlackButton" GroupName="ColorRadioButtons" Margin="15,5,0,0" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="15" Checked="BlackButton_Checked" Foreground="{DynamicResource MainForeground}">黑</RadioButton>
-                <RadioButton Name="WindowButton" GroupName="ColorRadioButtons" Margin="15,5,0,0" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="15" Checked="WindowButton_Checked" Foreground="{DynamicResource MainForeground}">跟随系统</RadioButton>
+                <RadioButton Name="WhiteButton" GroupName="ColorRadioButtons" Margin="15,5,0,0" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="17" Checked="WhiteButton_Checked" Foreground="{DynamicResource MainForeground}">白</RadioButton>
+                <RadioButton Name="BlackButton" GroupName="ColorRadioButtons" Margin="15,5,0,0" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="17" Checked="BlackButton_Checked" Foreground="{DynamicResource MainForeground}">黑</RadioButton>
+                <RadioButton Name="WindowButton" GroupName="ColorRadioButtons" Margin="15,5,0,0" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="17" Checked="WindowButton_Checked" Foreground="{DynamicResource MainForeground}">跟随系统</RadioButton>
             </StackPanel>
             <Button Width="100" Height="60" Margin="10" Content="应用" FontSize="16" Name="UseButton" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="UseButton_Click" Foreground="{DynamicResource MainForeground}" Background="{DynamicResource MainBackground2}" BorderThickness="0" />
         </DockPanel>
         <Label Foreground="{DynamicResource MainForeground}" Name="H1_2" Content="关于" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" FontWeight="Bold"/>
         <StackPanel Width="750" Height="170">
-            <TextBlock FontSize="22" HorizontalAlignment="Left" Margin="20,10,0,5" Foreground="{DynamicResource MainForeground}" >MuhuSL -- A Minecraft Server Launcher</TextBlock>
+            <TextBlock FontSize="22" HorizontalAlignment="Left" Margin="20,10,0,5" Foreground="{DynamicResource MainForeground}" >MuhuSL -- Beta 2.5</TextBlock>
             <StackPanel Orientation="Horizontal" Margin="30,10,0,0">
                 <TextBlock FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{DynamicResource MainForeground}">制作者：MuhuC</TextBlock>
                 <Button BorderThickness="0" Name="Muhu_C" Click="Muhu_C_Click">

@@ -62,9 +62,6 @@ namespace Muhu_SL
                     try
                     {
                         writer.WriteLine(WriteC);
-                        SvInfo = false;
-                        button.Content = "开启";
-                        button.Background = Brushes.Green;
                     }
                     catch (System.ObjectDisposedException)
                     {
@@ -74,8 +71,6 @@ namespace Muhu_SL
                         button.Background = Brushes.Green;
                     }
                 }
-                button.Background = Brushes.Green;
-                button.Content = "开启";
             }
             else
             {
@@ -88,7 +83,7 @@ namespace Muhu_SL
                         button.Content = "开启";
                         button.Background = Brushes.Green;
                     }
-                    else if (SvInfo == false || RESET)
+                    else if (!SvInfo || RESET)
                     {
                         TbOutput.Clear();
                         Server = new Thread(STS)
@@ -96,14 +91,10 @@ namespace Muhu_SL
                             IsBackground = true
                         };
                         Server.Start();
-                        SvInfo = true;
-                        button.Content = "关闭";
-                        button.Background = Brushes.Red;
                     }
                     else
                     {
                         MessageBox.Show("服务器未关闭！", "提示");
-                        SvInfo = true;
                         button.Content = "开启";
                         button.Background = Brushes.Green;
                     }
@@ -184,7 +175,9 @@ namespace Muhu_SL
                 {
                     if (line.Substring(line.Length - 13, 13) == "Timings Reset" | line.Substring(18, 19) == " thread/INFO]: Done")
                     {
-                        tb.AppendText("--------------------服务器开启成功--------------------\r\n");
+                        SvInfo = true;
+                        button.Content = "关闭";
+                        button.Background = Brushes.Red;
                     }
                 }
                 catch (System.ArgumentOutOfRangeException) { }
@@ -197,19 +190,14 @@ namespace Muhu_SL
                     SvInfo = false;
                     button.Content = "开启";
                     button.Background = Brushes.Green;
-                    try
-                    {
-                        tb.AppendText("--------------------服务器关闭成功--------------------\r\n");
-                    }
-                    catch (System.ObjectDisposedException) { }
                 }
                 if (line.Substring(line.Length - 23, 23) == "FAILED TO BIND TO PORT!")
                 {
-                    try
-                    {
-                        tb.AppendText("--------------------服务器端口被占用！--------------------\r\n");
-                    }
-                    catch (System.ObjectDisposedException) { }
+                    MessageBox.Show("服务器端口被占用！","错误");
+                    SvInfo = false;
+                    button.Content = "开启";
+                    button.Background = Brushes.Green;
+
                 }
             }
             if (line.Length > 48)

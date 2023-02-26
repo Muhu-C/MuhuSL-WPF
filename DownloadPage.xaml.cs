@@ -153,8 +153,9 @@ namespace Muhu_SL
                     osize = st.Read(by, 0, (int)by.Length);
 
                     percent = (float)totalDownloadedByte / (float)totalBytes * 100;
-                    label1.Content = percent.ToString() + "%";
-                    System.Windows.Forms.Application.DoEvents(); //必须加注这句代码，否则label1将因为循环执行太快而来不及显示信息
+                    double percent_number = Math.Round(percent,2);
+                    label1.Content = percent_number.ToString() + "%";
+                    System.Windows.Forms.Application.DoEvents();
                 }
                 so.Close();
                 st.Close();
@@ -167,7 +168,9 @@ namespace Muhu_SL
 
         private void LbClass_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(LbClass.SelectedIndex==0)
+            DownloadClassLabel.Content = LbClass.SelectedItem.ToString().Substring(LbClass.SelectedItem.ToString().LastIndexOf(": ") + 2);
+            DownloadVersionLabel.Content = "";
+            if (LbClass.SelectedIndex==0)
             {
                 DownloadClassIndex = 0;
                 LbVersions.Items.Clear();
@@ -203,11 +206,15 @@ namespace Muhu_SL
         {
             try
             {
+                if (LbVersions.SelectedItem != null)
+                {
+                    DownloadVersionLabel.Content = LbVersions.SelectedItem.ToString();
+                }
                 DownloadVersionIndex = LbClass.SelectedIndex;
                 DownloadClientIndex = LbVersions.SelectedIndex;
                 DownloadFileURL = Downloads[DownloadClassIndex][DownloadClientIndex];
             }
-            catch
+            catch(System.Exception)
             {
                 DownloadVersionIndex = -1;
                 DownloadClientIndex = -1;//a
